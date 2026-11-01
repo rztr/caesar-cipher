@@ -4,6 +4,7 @@ import com.javarush.caesar.core.BruteForce;
 import com.javarush.caesar.core.Cipher;
 import com.javarush.caesar.exception.CipherException;
 import com.javarush.caesar.service.FileManager;
+import com.javarush.caesar.service.KeyNormalizer;
 import com.javarush.caesar.service.Validator;
 
 import java.util.Scanner;
@@ -18,6 +19,7 @@ public class MainApp {
 
     private final Scanner scanner = new Scanner(System.in);
     private final FileManager fileManager = new FileManager();
+    private final KeyNormalizer keyNormalizer = new KeyNormalizer();
     private final Validator validator = new Validator();
     private final Cipher cipher = new Cipher(ALPHABET);
     private final BruteForce bruteForce = new BruteForce();
