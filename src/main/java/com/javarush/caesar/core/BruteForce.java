@@ -49,7 +49,7 @@ public class BruteForce {
         String bestText = encryptedText;
         float bestScore = Float.MAX_VALUE;
 
-        for (int key = 1; key < alphabet.length; key++) {
+        for (int key = 0; key < alphabet.length; key++) {
             String candidate = cipher.decrypt(encryptedText, key);
             float score = score(countCharFrequency(candidate, alphabet));
             if (score < bestScore) {

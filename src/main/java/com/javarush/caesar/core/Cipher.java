@@ -32,16 +32,7 @@ public class Cipher {
     }
 
     public String decrypt(String encryptedText, int shift) {
-        StringBuilder decrypted = new StringBuilder(encryptedText.length());
-        for (char c : encryptedText.toCharArray()) {
-            Integer originalIndex = indexOf.get(c);
-            if (originalIndex != null) {
-                int newIndex = (originalIndex - shift + alphabetLength) % alphabetLength;
-                decrypted.append(alphabet[newIndex]);
-            } else {
-                decrypted.append(c);
-            }
-        }
-        return decrypted.toString();
+        int reverseShift = Math.floorMod(-shift, alphabetLength);
+        return encrypt(encryptedText, reverseShift);
     }
 }
